@@ -5,4 +5,4 @@ from api.models import Referral
 class ReferralSerializer(serializers.ModelSerializer):
     class Meta:
         model = Referral
-        fields = ('title', 'clicks')
+        fields = ('id', 'title', 'clicks')
