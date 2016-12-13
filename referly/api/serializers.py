@@ -1,4 +1,4 @@
-from rest_framework import serializer_class
+from rest_framework import serializers
 
 from api.models import Referral
 
