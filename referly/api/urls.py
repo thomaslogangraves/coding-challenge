@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, urls
+from django.conf.urls import url
+from api import views
 
-urlpatterns = patterns(
-    'api.views',
-    url(r'^referrals/$', 'referral_list', name='referral_list'),
-    url(r'^referrals/(?P<pk>[0-9]+)$', 'referral_detail', name='referral_detail'),
-)
+urlpatterns = [
+    url(r'^referrals/$', views.referral_list),
+    url(r'^referrals/(?P<pk>[0-9]+)/$', views.referral_detail),
+]
