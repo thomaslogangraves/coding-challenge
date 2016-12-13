@@ -1,14 +1,14 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.models import Snippet
+from api.models import Referral
 from api.serializers import ReferralSerializer
 
 
 @api_view(['GET', 'POST'])
-def referral_list(request):
+def referral_list(request, format=None):
     """
-    List all api, or create a new snippet.
+    List all referrals, or create a new referral.
     """
     if request.method == 'GET':
         referrals = Referral.objects.all()
@@ -23,7 +23,7 @@ def referral_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def referral_detail(request, pk):
+def referral_detail(request, pk, format=None):
     """
     Retrieve, update or delete a snippet instance.
     """
