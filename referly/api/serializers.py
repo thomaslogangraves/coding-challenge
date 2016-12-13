@@ -1,6 +1,6 @@
 from rest_framework import serializer_class
 
-from referrals.models import referrals
+from api.models import Referral
 
 class ReferralSerializer(serializers.ModelSerializer):
     class Meta:
