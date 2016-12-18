@@ -1,6 +1,6 @@
 from api.models import Referral
 from api.serializers import ReferralSerializer, UserSerializer
-from rest_framework import generics, permissions
+from rest_framework import generics
 from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -17,8 +17,6 @@ class ReferralViewSet(viewsets.ModelViewSet):
     queryset = Referral.objects.all()
     serializer_class = ReferralSerializer
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
