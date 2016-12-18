@@ -1,3 +1,4 @@
 .env
 *.pyc
 git pu
+node_modules
